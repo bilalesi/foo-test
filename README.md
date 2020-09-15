@@ -39,7 +39,7 @@ usecase:
 #### you can find the model for the product collection in
 **(src\main\infra\databse\models\product.ts)**
 
-``javascript
+```javascript
 const productSchema = new mongoose.Schema({
     prductId: {
         type: uuidV4
@@ -59,6 +59,6 @@ const productSchema = new mongoose.Schema({
     ...productProperties
 }, { 
     timestamps: true
-})``
+})```
 
 ** i mixed with mongod and mongoose just for the demonstartion sake;
