@@ -11,5 +11,9 @@ productRouter.post('/product', middlewares.isAuthenticated(), function(req, res)
 })
 
 productRouter.put('/discount', middlewares.isAuthenticated(), function(req, res){
-    ManagePrice.discountWithPercentageController.run(req, res)
+    ManagePriceController.discountWithPercentageController.run(req, res)
+})
+
+productRouter.get('/group', middlewares.isAuthenticated(), function(req, res){
+    ManagePriceController.groupAndSetOffer.run(req, res);
 })

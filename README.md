@@ -1,5 +1,5 @@
-* Project architecture
-*** Architecture
+# Project architecture
+### Architecture
 in this skeleton i use the most used arch for project of high companies and its DDD
 and i used some principles as dependency indjection and factory pattern as defaults 
 
@@ -20,13 +20,13 @@ the use cases take the request as DTO (data transport object) from the controlle
 and verify the business logic then pass to the repository method to handle the writing/reading from the DB;
 
 for the specifics tasks:
-***** "Permettre à l'administrateur de gérer une liste de produits qui ont des prix."
+#### "Permettre à l'administrateur de gérer une liste de produits qui ont des prix."
  you will find a namespace contains all the details of managing price path in 
 **(src\modules\product\usecases\serverOrAdmin\manageProoductByPrices)**
  and in the createProductUseCase
 **(src\modules\product\usecases\serverOrAdmin\createProductUseCase)**
 
-***** "Permet à l'administrateur de fixer des prix concrets (tels que 1000 da) et des remises sur les prix, soit d'un montant concret (-200 da), soit d'un pourcentage (-10%)."
+#### "Permet à l'administrateur de fixer des prix concrets (tels que 1000 da) et des remises sur les prix, soit d'un montant concret (-200 da), soit d'un pourcentage (-10%)."
 
 the request must contain the amout and type depending on the admin choise (UI)
 pass to the use case that will test against the request.body.type { type, amout}
@@ -36,8 +36,9 @@ controller:
 usecase:
 **(src\modules\product\usecases\serverOrAdmin\manageProoductByPrices\manageProductByPriceUseCase.ts)**
 
-you can find the model for the product collection in
+#### you can find the model for the product collection in
 **(src\main\infra\databse\models\product.ts)**
+
 ``javascript
 const productSchema = new mongoose.Schema({
     prductId: {
@@ -58,7 +59,6 @@ const productSchema = new mongoose.Schema({
     ...productProperties
 }, { 
     timestamps: true
-})
-``
+})``
 
 ** i mixed with mongod and mongoose just for the demonstartion sake;

@@ -2,14 +2,14 @@
 // its all about get/post/update/delete request
 // see createProductUseCase;
 
-namespace ManagePrice{
+namespace ManagePriceController{
     // classes that implement all the use cases cited in the domain model and the repository
 
 
     // this class responsible fix a price (concret price/percentage)
     // i think the best way the query.body will conain a property that indicate
     // if the discount will be % or fixed
-    class discountWithPercentageController extends BaseController{
+    export class discountWithPercentageController extends BaseController{
         constructor(){
             super()
         }
